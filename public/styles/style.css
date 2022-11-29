@@ -1,0 +1,35 @@
+
+.cst-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cst-header {
+  flex: 0 0 100px;
+}
+
+
+.cst-main {
+  flex: 1 0 auto;
+}
+
+.cst-footer {
+  flex: 0 0 50px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.cst-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 20px 30px 20px;
+}
+
+.cst-home-element {
+    margin: 30px 20px 30px 20px;
+}
