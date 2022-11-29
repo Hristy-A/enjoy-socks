@@ -9,7 +9,7 @@ module.exports = function mapControllers(app, paths, pattern = '/{controllers}')
   for (const controllerName in controllers) {
     let route;
     if (controllerName === 'index') {
-      route = pattern.replace('{controllers}', 'index');
+      route = pattern.replace('{controllers}', '');
     } else {
       route = pattern.replace('{controllers}', controllerName);
     }
