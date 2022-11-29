@@ -1,28 +1,39 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      this.hasMany(models.Favorite, { foreignKey: 'userId' });
-      this.hasMany(models.Cart, { foreignKey: 'userId' });
+      User.belongsToMany(models.Sock, {
+        through: models.Favorite,
+        foreignKey: 'userId',
+        otherKey: 'sockId',
+        as: 'favorites',
+      });
+
+      User.belongsToMany(models.Sock, {
+        through: models.Cart,
+        foreignKey: 'userId',
+        otherKey: 'sockId',
+        as: 'purchases',
+      });
     }
   }
   User.init({
     name: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
-      validate: { isEmail: true }, 
+      validate: { isEmail: true },
     },
     phone: {
-      allowNull:false,
-      type:DataTypes.STRING,
+      allowNull: false,
+      type: DataTypes.STRING,
     },
     passhash: {
-      allowNull:false,
-      type:DataTypes.STRING,
-    }
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
   }, {
     sequelize,
     modelName: 'User',
