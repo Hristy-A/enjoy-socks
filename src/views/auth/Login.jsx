@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function Login({ error }) {
+module.exports = function Login({ error, user }) {
   return (
-    <Layout additionalStyle="auth.css">
+    <Layout user={user}>
       <div className="login-box">
         <h2>Login</h2>
         <form id="auth" action="/login" method="POST">
