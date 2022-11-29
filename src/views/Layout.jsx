@@ -26,13 +26,13 @@ module.exports = function Layout({ children, title, user }) {
                   <a className="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Register</a>
+                  <a className="nav-link" href="/register">Register</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Login</a>
+                  <a className="nav-link" href="/login">Login</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Log Out</a>
+                  <a className="nav-link" href="/logout">Log Out</a>
                 </li>
               </ul>
             </div>
@@ -44,7 +44,7 @@ module.exports = function Layout({ children, title, user }) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossOrigin="anonymous" />
       </body>
       <footer>
-        <span></span>
+        <span />
       </footer>
     </html>
   );
