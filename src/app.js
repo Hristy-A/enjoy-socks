@@ -8,7 +8,10 @@ const app = express();
 
 configureApp(app);
 
-// app.get('/', (req, res) => res.send('<h1>Магазин носков</h1>'));
+const index = require('./routes/index');
+
+app.use('/', index);
+
 app.listen(process.env.PORT, () => {
   console.log(`Server started on http://localhost:${process.env.PORT}`);
 });
