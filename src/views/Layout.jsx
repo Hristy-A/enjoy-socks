@@ -17,42 +17,45 @@ module.exports = function Layout({ children, user }) {
         <div className="cst-wrapper">
           <header className="cst-header">
             <nav className="navbar navbar-expand-lg bg-light">
-              <div className="container-fluid">
-                <a className="navbar-brand" href="./">
-                  <img src="./images/logo.png" alt="" width="50" height="50" className="d-inline-block align-text-top" />
-                </a>
+              <div className="container-fluid d-flex">
+                <span className="pb-2">
+                  <a className="navbar-brand" href="./">
+                    <img src="./images/logo.png" alt="" width="50" height="50" className="d-inline-block align-text-top" />
+                  </a>
+                </span>
                 <h3>Enjoy Socks</h3>
+                <div className="flex-grow-1" />
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon" />
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
+                  <div className="flex-grow-1" />
                   <ul className="navbar-nav justify-content-end">
-                    <li className="nav-item">
+                    <li className="nav-item text-center">
                       <a className="nav-link" href="#">Избранное</a>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item text-center">
                       <a className="nav-link" href="#">Корзина</a>
                     </li>
                     { user ? (
                       <>
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                           <span className="nav-link">{ user.name }</span>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                           <a className="nav-link" href="/logout">Выход</a>
                         </li>
                       </>
                     ) : (
                       <>
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                           <a className="nav-link" href="/register">Регистрация</a>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                           <a className="nav-link" href="/login">Вход</a>
                         </li>
                       </>
                     )}
-
                   </ul>
                 </div>
               </div>
