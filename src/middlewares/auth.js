@@ -1,6 +1,6 @@
-exports.onAuth = function onAuthed(handler) {
-  return function auth(req, res, next) {
-    if (!req.session.user) {
+exports.onAuth = function onAuth(handler) {
+  return function unauth(req, res, next) {
+    if (req.session.user) {
       handler();
       return;
     }
@@ -8,9 +8,9 @@ exports.onAuth = function onAuthed(handler) {
   };
 };
 
-exports.onAuth = function onUnauthed(handler) {
-  return function unauth(req, res, next) {
-    if (req.session.user) {
+exports.onUnauth = function onUnauth(handler) {
+  return function auth(req, res, next) {
+    if (!req.session.user) {
       handler();
       return;
     }

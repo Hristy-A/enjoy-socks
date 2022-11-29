@@ -5,29 +5,28 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Sock extends Model {
     static associate(models) {
-      Sock.belongsToMany(models.User, {
+      this.followers = Sock.belongsToMany(models.User, {
         through: models.Favorite,
         foreignKey: 'sockId',
         otherKey: 'userId',
         as: 'followers',
       });
-
-      Sock.belongsToMany(models.User, {
+      this.buyers = Sock.belongsToMany(models.User, {
         through: models.Cart,
         foreignKey: 'sockId',
         otherKey: 'userId',
         as: 'buyers',
       });
 
-      Sock.belongsTo(models.Color, {
+      this.color = Sock.belongsTo(models.Color, {
         foreignKey: 'colorId',
         as: 'color',
       });
-      Sock.belongsTo(models.Color, {
+      this.image = Sock.belongsTo(models.Image, {
         foreignKey: 'imageId',
         as: 'image',
       });
-      Sock.belongsTo(models.Color, {
+      this.pattern = Sock.belongsTo(models.Pattern, {
         foreignKey: 'patternId',
         as: 'pattern',
       });

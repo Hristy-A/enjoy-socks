@@ -11,7 +11,7 @@ module.exports = function Login({ error }) {
             {error ?? ''}
           </div>
           <div className="user-box">
-            <input type="text" name="email" id="email" required pattern="\w{4,}" />
+            <input type="text" name="email" id="email" required pattern=".{4,}" />
             <label htmlFor="email">Email</label>
           </div>
           <div className="user-box">

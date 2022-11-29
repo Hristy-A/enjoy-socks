@@ -39,19 +39,20 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static associate(models) {
-      User.belongsToMany(models.Sock, {
+      this.favorites = User.belongsToMany(models.Sock, {
         through: models.Favorite,
         foreignKey: 'userId',
         otherKey: 'sockId',
         as: 'favorites',
       });
-
-      User.belongsToMany(models.Sock, {
+      this.purchases = User.belongsToMany(models.Sock, {
         through: models.Cart,
         foreignKey: 'userId',
         otherKey: 'sockId',
         as: 'purchases',
       });
+
+      this.models = models;
     }
   }
   User.init({
