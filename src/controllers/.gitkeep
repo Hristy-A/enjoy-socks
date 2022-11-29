@@ -1,0 +1,2 @@
+//? res.renderComponent('/')
+//? res.redirect('/')
