@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Pattern extends Model {
     static associate(models) {
@@ -10,9 +10,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Pattern.init({
     link: {
-      allowNull:false,
-      type:DataTypes.STRING,
-    }
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
   }, {
     sequelize,
     modelName: 'Pattern',

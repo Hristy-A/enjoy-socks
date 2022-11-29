@@ -18,6 +18,19 @@ module.exports = (sequelize, DataTypes) => {
         otherKey: 'userId',
         as: 'buyers',
       });
+
+      Sock.belongsTo(models.Color, {
+        foreignKey: 'colorId',
+        as: 'color',
+      });
+      Sock.belongsTo(models.Color, {
+        foreignKey: 'imageId',
+        as: 'image',
+      });
+      Sock.belongsTo(models.Color, {
+        foreignKey: 'patternId',
+        as: 'pattern',
+      });
     }
   }
   Sock.init({
