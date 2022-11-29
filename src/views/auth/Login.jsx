@@ -4,8 +4,7 @@ const Layout = require('../Layout');
 module.exports = function Login({ error, user }) {
   return (
     <Layout user={user}>
-      <div className="d-flex justify-content-center">
-
+      <div>
         <form id="auth" action="/login" method="POST">
 
           <div className="error-box">
@@ -27,7 +26,6 @@ module.exports = function Login({ error, user }) {
           </div>
 
         </form>
-
       </div>
 
       <script defer src="auth.js" />
