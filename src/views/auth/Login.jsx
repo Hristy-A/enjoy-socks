@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function Login({ error }) {
+module.exports = function Login({ error, user }) {
   return (
-    <Layout additionalStyle="auth.css">
+    <Layout user={user}>
       <div className="login-box">
         <h2>Login</h2>
         <form id="auth" action="/login" method="POST">
@@ -11,7 +11,7 @@ module.exports = function Login({ error }) {
             {error ?? ''}
           </div>
           <div className="user-box">
-            <input type="text" name="email" id="email" required pattern="\w{4,}" />
+            <input type="text" name="email" id="email" required pattern=".{4,}" />
             <label htmlFor="email">Email</label>
           </div>
           <div className="user-box">

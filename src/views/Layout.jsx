@@ -1,7 +1,8 @@
 const React = require('react');
 
-module.exports = function Layout({ children, title, user }) {
+module.exports = function Layout({ children, user }) {
   return (
+
     <html lang="ru">
       <head>
         <meta charSet="UTF-8" />
@@ -15,7 +16,6 @@ module.exports = function Layout({ children, title, user }) {
       <body>
         <div className="cst-wrapper">
           <header className="cst-header">
-
             <nav className="navbar navbar-expand-lg bg-light">
               <div className="container-fluid">
                 <a className="navbar-brand" href="./">
@@ -25,24 +25,36 @@ module.exports = function Layout({ children, title, user }) {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon" />
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNav" />
-                <ul className="navbar-nav ml-auto">
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Избранное</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Корзина</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Регистрация</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Вход</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Выход</a>
-                  </li>
-                </ul>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                  <ul className="navbar-nav justify-content-end">
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">Избранное</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">Корзина</a>
+                    </li>
+                    { user ? (
+                      <>
+                        <li className="nav-item">
+                          <span className="nav-link">{ user.name }</span>
+                        </li>
+                        <li className="nav-item">
+                          <a className="nav-link" href="/logout">Выход</a>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li className="nav-item">
+                          <a className="nav-link" href="/register">Регистрация</a>
+                        </li>
+                        <li className="nav-item">
+                          <a className="nav-link" href="/login">Вход</a>
+                        </li>
+                      </>
+                    )}
+
+                  </ul>
+                </div>
               </div>
             </nav>
 
