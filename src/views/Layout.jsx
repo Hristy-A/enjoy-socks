@@ -11,6 +11,7 @@ module.exports = function Layout({ children, title, user }) {
         <link rel="stylesheet" href="./styles/style.css" />
         <title>Enjoy Socks</title>
       </head>
+
       <body>
         <div className="cst-wrapper">
           <header className="cst-header">

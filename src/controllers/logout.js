@@ -1,7 +1,7 @@
 module.exports = function register(logoutRoute) {
   logoutRoute
     // ? logout user
-    .post('/', (req, res, next) => {
+    .get('/', (req, res, next) => {
       req.session.destroy((error) => {
         if (error) next(error);
 
