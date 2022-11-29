@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Home({ }) {
+module.exports = function Home({ user }) {
   return (
-    <Layout>
+    <Layout user={user} styles="generator.css">
       <div>
         <img className="cst-home-element" src="./images/logo.png" alt="" width="350" height="350" />
       </div>
@@ -21,4 +21,3 @@ module.exports = function Home({ }) {
     </Layout>
   );
 };
-// generator

@@ -1,14 +1,15 @@
 const { User } = require('../models');
+const unauth = require('../middlewares/auth').onAuth((res) => res.redirect('/'));
 
 const Login = require('../views/auth/Login');
 
 module.exports = function register(loginRoute) {
   loginRoute
     // ? render login page
-    .get('/', (req, res, next) => res.renderComponent(Login))
+    .get('/', unauth, (req, res, next) => res.renderComponent(Login))
 
     // ? login user
-    .post('/', async (req, res, next) => {
+    .post('/', unauth, async (req, res, next) => {
       try {
         req.session.user = await User.login(req.body);
         req.session.save(() => res.redirect('/'));
