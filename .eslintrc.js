@@ -25,5 +25,6 @@ module.exports = {
     'guard-for-in': 0,
     'no-param-reassign': 0,
     'no-console': 0,
+    'max-len': 0,
   },
 };
