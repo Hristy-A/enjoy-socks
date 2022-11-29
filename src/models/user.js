@@ -38,6 +38,10 @@ module.exports = (sequelize, DataTypes) => {
       return user;
     }
 
+    static async addFavorite(userId, favorite) {
+
+    }
+
     static associate(models) {
       this.favorites = User.belongsToMany(models.Sock, {
         through: models.Favorite,
