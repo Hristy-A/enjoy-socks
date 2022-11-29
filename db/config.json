@@ -1,7 +1,9 @@
 {
   "development": {
     "use_env_variable": "DB_DEV",
-    "logging": false
+    "logging": false,
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "SequelizeData"
   },
   "production": {
     "use_env_variable": "DB_PROD"
