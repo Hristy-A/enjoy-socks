@@ -1,18 +1,18 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Image extends Model {
     static associate(models) {
-      this.hasMany(models.Sock, { foreignKey: 'imageId' });
+      Image.hasMany(models.Sock, { foreignKey: 'imageId' });
     }
   }
   Image.init({
     link: {
-      allowNull:false,
-      type:DataTypes.STRING,
-    }
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
   }, {
     sequelize,
     modelName: 'Image',

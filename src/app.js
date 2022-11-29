@@ -3,14 +3,13 @@ require('dotenv').config();
 
 const express = require('express');
 const configureApp = require('./config/configureApp');
+const mapControllers = require('./lib/mapControllers');
 
 const app = express();
 
 configureApp(app);
 
-const index = require('./routes/index');
-
-app.use('/', index);
+mapControllers(app, ['src', 'controllers']);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server started on http://localhost:${process.env.PORT}`);
