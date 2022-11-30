@@ -19,6 +19,7 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
       imageId: {
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {
           model: 'Images',
@@ -28,6 +29,7 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
       patternId: {
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {
           model: 'Patterns',
