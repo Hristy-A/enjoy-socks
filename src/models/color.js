@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true,
     },
+    origin: {
+      allowNull: false,
+      type: DataTypes.STRING,
+      unique: true,
+    },
   }, {
     sequelize,
     modelName: 'Color',

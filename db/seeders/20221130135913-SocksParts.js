@@ -52,12 +52,30 @@ module.exports = {
         queryInterface.bulkInsert(
           'Colors',
           [
-            { link: './images/socks/colors/white.png' },
-            { link: './images/socks/colors/blue.png' },
-            { link: './images/socks/colors/green.png' },
-            { link: './images/socks/colors/pink.png' },
-            { link: './images/socks/colors/purple.png' },
-            { link: './images/socks/colors/yellow.png' },
+            {
+              link: './images/socks/colors/white.png',
+              origin: '#e8e8e8',
+            },
+            {
+              link: './images/socks/colors/blue.png',
+              origin: '#3fcdec',
+            },
+            {
+              link: './images/socks/colors/green.png',
+              origin: '#0eec39',
+            },
+            {
+              link: './images/socks/colors/pink.png',
+              origin: '#e89cae',
+            },
+            {
+              link: './images/socks/colors/purple.png',
+              origin: '#c951e6',
+            },
+            {
+              link: './images/socks/colors/yellow.png',
+              origin: '#eeef5d',
+            },
           ],
           {},
         ),
