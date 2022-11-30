@@ -9,7 +9,7 @@ module.exports = function Favorites({ user }) {
         <div className="card">
 
           <div className="d-flex justify-content-center">
-            <img src="/images/logo.png" className="card-img-top" alt="..." />
+            <img src="/images/socks/logo.png" className="card-img-top" alt="" />
           </div>
 
           <div className="card-body d-flex justify-content-center">
