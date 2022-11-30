@@ -21,8 +21,8 @@ exports.createUserAndSession = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({name: name, passhash: hashedPassword, email: email, phone: phone});
 
-    //req.session.user = {id: user.id, name: user.name}; // записываем в req.session.user данные (id & name) (создаем сессию)
-    res.redirect('/'); // ответ + автоматическое создание и отправка cookies в заголовке клиенту
+    req.session.user = {id: user.id, name: user.name}; // записываем в req.session.user данные (id & name) (создаем сессию)
+    res.redirect('/auth/SignIn'); // ответ + автоматическое создание и отправка cookies в заголовке клиенту
 
   } catch (error) {
     console.log("\x1b[31m", 'SignUp Error', error);
@@ -38,10 +38,12 @@ exports.createUserAndSession = async (req, res, next) => {
 exports.checkUserAndCreateSession = async (req, res, next) => {
   try {
     const {name, password} = req.body;
+    console.log(name, password)
     const user = await User.findOne({where: {name: name}});
+    console.log(user)
 
     if(!user) return failAuth(res, {message: 'Не правильное имя пользователя или пароль!'})
-    const isPasswValid = await bcrypt.compare(password, user.password);
+    const isPasswValid = await bcrypt.compare(password, user.passhash);
     if(!isPasswValid) return failAuth(res, {message: 'Не правильное имя пользователя или пароль!!'})
 
     req.session.user = {id: user.id, name: user.name}; // записываем в req.session.user данные (id & name) (создаем сессию)

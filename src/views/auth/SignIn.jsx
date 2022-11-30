@@ -8,7 +8,7 @@ function SignInForm({ username, name }) {
     <Layout username={username}>
       <div className="container mt-5">
         <h2>Вход на сайт</h2>
-        <form id="signinForm" method="POST" action="/SignIn">
+        <form id="signinForm" method="POST" action="/auth/SignIn">
           <div className="form-group">
             <label htmlFor="username">Логин:</label>
             <input
