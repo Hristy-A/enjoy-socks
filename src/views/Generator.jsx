@@ -11,10 +11,10 @@ module.exports = function Home({
       </div>
 
       <div>
-        <div>
+        <div className="d-flex">
           Цвет:
           { colors?.map((color) => (
-            <img src={color.link} className="card-img-top cst-generator-btn-color" alt="" />
+            <div style={{ width: '50px', height: '50px', background: color.origin }} />
           ))}
         </div>
 
