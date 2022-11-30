@@ -47,11 +47,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     imageId: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER,
     },
     patternId: {
-      allowNull: false,
+      allowNull: true,
       type: DataTypes.INTEGER,
     },
     price: {
