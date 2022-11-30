@@ -11,24 +11,24 @@ module.exports = function Home({
       </div>
 
       <div>
-        <div>
+        <div className="d-flex">
           Цвет:
-          { colors?.map((el) => (
-            <img src={colors.link} className="card-img-top cst-generator-btn-color" alt="" />
+          { colors?.map((color) => (
+            <div style={{ width: '50px', height: '50px', background: color.origin }} />
           ))}
         </div>
 
         <div>
           Рисунок:
-          { images?.map((el) => (
-            <img src={images.origin} className="card-img-top cst-generator-btn" alt="" />
+          { images?.map((image) => (
+            <img src={image.origin} className="card-img-top cst-generator-btn" alt="" />
           ))}
         </div>
 
         <div>
           Узор:
-          { patterns?.map((el) => (
-            <img src={patterns.origin} className="card-img-top cst-generator-btn" alt="" />
+          { patterns?.map((pattern) => (
+            <img src={pattern.origin} className="card-img-top cst-generator-btn" alt="" />
           ))}
         </div>
       </div>

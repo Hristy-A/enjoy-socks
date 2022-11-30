@@ -4,7 +4,16 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Sock extends Model {
+    static async getAllProperties() {
+      return {
+        colors: await this.Color.findAll({ raw: true }),
+        images: await this.Image.findAll({ raw: true }),
+        patterns: await this.Pattern.findAll({ raw: true }),
+      };
+    }
+
     static associate(models) {
+      Object.assign(this, models);
       this.followers = Sock.belongsToMany(models.User, {
         through: models.Favorite,
         foreignKey: 'sockId',
