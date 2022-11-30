@@ -5,30 +5,40 @@ module.exports = function Home({
   user, colors, images, patterns,
 }) {
   return (
-    <Layout user={user} styles="generator.css">
+    <Layout user={user} styles="./styles/generator.css">
       <div>
-        <img className="cst-home-element" src="./images/logo.png" alt="" width="350" height="350" />
+        <div className="cst-generator-box">
+          <img className="cst-sock cst-image" src="" alt="" />
+          <img className="cst-sock cst-pattern" src="" alt="" />
+          <img className="cst-sock cst-color" src={colors[0].link} alt="" />
+        </div>
       </div>
 
       <div>
-        <div className="d-flex">
-          Цвет:
+        <div data-bind="cst-color" className="d-flex cst-color-select cst-select-parent">
+          <div>Цвет:</div>
           { colors?.map((color) => (
-            <div style={{ width: '50px', height: '50px', background: color.origin }} />
+            <div data-id={color.id} data-src={color.link} style={{ background: color.origin }} />
           ))}
         </div>
 
-        <div>
-          Рисунок:
+        <div data-bind="cst-image" className="d-flex cst-image-select cst-select-parent">
+          <div>Рисунок:</div>
+          <div data-id="" data-src="" className="cst-empty" />
           { images?.map((image) => (
-            <img src={image.origin} className="card-img-top cst-generator-btn" alt="" />
+            <div data-id={image.id} data-src={image.link}>
+              <img src={image.origin} className="card-img-top cst-generator-btn" alt="" />
+            </div>
           ))}
         </div>
 
-        <div>
-          Узор:
+        <div data-bind="cst-pattern" className="d-flex cst-pattern-select cst-select-parent">
+          <div>Узор:</div>
+          <div data-id="" data-src="" className="cst-empty" />
           { patterns?.map((pattern) => (
-            <img src={pattern.origin} className="card-img-top cst-generator-btn" alt="" />
+            <div data-id={pattern.id} data-src={pattern.link}>
+              <img src={pattern.origin} className="card-img-top cst-generator-btn" alt="" />
+            </div>
           ))}
         </div>
       </div>
@@ -51,7 +61,7 @@ module.exports = function Home({
           </div>
         </a>
       </div>
-
+      <script defer src="./scripts/generator.js" />
     </Layout>
   );
 };
