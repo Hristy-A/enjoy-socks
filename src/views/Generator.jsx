@@ -13,22 +13,22 @@ module.exports = function Home({
       <div>
         <div>
           Цвет:
-          { colors?.map((el) => (
-            <img src={colors.link} className="card-img-top cst-generator-btn-color" alt="" />
+          { colors?.map((color) => (
+            <img src={color.link} className="card-img-top cst-generator-btn-color" alt="" />
           ))}
         </div>
 
         <div>
           Рисунок:
-          { images?.map((el) => (
-            <img src={images.origin} className="card-img-top cst-generator-btn" alt="" />
+          { images?.map((image) => (
+            <img src={image.origin} className="card-img-top cst-generator-btn" alt="" />
           ))}
         </div>
 
         <div>
           Узор:
-          { patterns?.map((el) => (
-            <img src={patterns.origin} className="card-img-top cst-generator-btn" alt="" />
+          { patterns?.map((pattern) => (
+            <img src={pattern.origin} className="card-img-top cst-generator-btn" alt="" />
           ))}
         </div>
       </div>
