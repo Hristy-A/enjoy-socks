@@ -13,11 +13,14 @@ module.exports = (sequelize, DataTypes) => {
 
       const passhash = await bcrypt.hash(password, 10);
 
-      const user = await User.create({
+      const user = (await User.create({
         name, email, phone, passhash,
-      }, { raw: true });
+      })).get();
 
       delete user.passhash;
+      delete user?.createdAt;
+      delete user?.updatedAt;
+
       return user;
     }
 
