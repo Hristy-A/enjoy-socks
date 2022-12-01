@@ -10,7 +10,7 @@ module.exports = function Home({ user }) {
         <div className="cst-home-element"><h3>Смоделируй свою любимую пару носков!</h3></div>
         <img className="cst-home-element" src="./images/logo.png" alt="" width="350" height="350" />
 
-        <div className="nav-item text-center">
+        <div className="nav-item text-center cst-nav-item">
           <a className="nav-link" href="/generator">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" className="bi bi-play-circle" viewBox="0 0 16 16">

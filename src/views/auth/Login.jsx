@@ -9,12 +9,12 @@ module.exports = function Login() {
 
           <div className="error-box" />
 
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">📩</span>
+          <div className="input-group mb-3 input-wigth">
+            <span className="input-group-text " id="basic-addon1">📩</span>
             <input type="text" name="email" id="email" className="form-control" placeholder="Электронная почта" aria-describedby="basic-addon1" />
           </div>
 
-          <div className="input-group mb-3">
+          <div className="input-group mb-3 input-wigth">
             <span className="input-group-text" id="basic-addon1">🔑</span>
             <input type="password" name="password" id="password" required pattern="\w{4,}" className="form-control" placeholder="Пароль" aria-describedby="basic-addon1" />
           </div>
