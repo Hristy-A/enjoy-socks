@@ -48,10 +48,12 @@
   border-radius: 20px;
 }
 
-.card-img-top {
-  margin: 10px 10px 10px 10px;
-  width: 250px;
-  height: 250px;
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+.cst-logo:hover {
+  transform: scale(1.1);
 }
 
 footer {
