@@ -41,11 +41,28 @@ module.exports = (sequelize, DataTypes) => {
       return user;
     }
 
-    static async addFavorite(userId, favorite) {
+    static async addFavoritesBulk(userId, socks) {
+      const favoriteSocks = await this.Sock.bulkCreate(socks);
+      await this.Favorite.bulkCreate(favoriteSocks.map((favoriteSock) => ({ userId, sockId: favoriteSock.id })));
+    }
 
+    static async addCartsBulk(userId, socks) {
+      const cartSocks = await this.Sock.bulkCreate(socks);
+      await this.Cart.bulkCreate(cartSocks.map((cartSock) => ({ userId, sockId: cartSock.id })));
+    }
+
+    static async addFavorite(userId, sock) {
+      const favoriteSock = await this.Sock.create(sock);
+      await this.Favorite.create({ userId, sockId: favoriteSock.id });
+    }
+
+    static async addCart(userId, sock) {
+      const cartSock = await this.Sock.create(sock);
+      await this.Cart.create({ userId, sockId: cartSock.id });
     }
 
     static associate(models) {
+      Object.assign(this, models);
       this.favorites = User.belongsToMany(models.Sock, {
         through: models.Favorite,
         foreignKey: 'userId',

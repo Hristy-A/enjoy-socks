@@ -25,9 +25,9 @@ sockPalettes.forEach((sockPalette) => {
 
 function formSock() {
   return {
-    colorId: generatorColor.dataset.id,
-    imageId: generatorImage.dataset.id || null,
-    patternId: generatorPattern.dataset.id || null,
+    colorId: generatorColor.dataset.id ?? 1,
+    imageId: Number(generatorImage.dataset.id) || null,
+    patternId: Number(generatorPattern.dataset.id) || null,
     price: 990, //! hardcode
     size: 'L-XXL', //! hardcode
   };
@@ -36,9 +36,23 @@ function formSock() {
 const addFavoriteBtn = document.getElementById('add-favorite-btn');
 const addCartBtn = document.getElementById('add-cart-btn');
 
-addFavoriteBtn.addEventListener('click', (event) => {
-  addFavorite(formSock());
+addFavoriteBtn.addEventListener('click', async (event) => {
+  const sock = formSock();
+  const response = await fetch('/api/favorites', {
+    method: 'POST',
+    headers: ContentType.json,
+    body: JSON.stringify(sock),
+  });
+
+  if (response.status === StatusCode.Unauthorized) addFavorite(formSock());
 });
-addCartBtn.addEventListener('click', (event) => {
-  addCart(formSock());
+addCartBtn.addEventListener('click', async (event) => {
+  const sock = formSock();
+  const response = await fetch('/api/carts', {
+    method: 'POST',
+    headers: ContentType.json,
+    body: JSON.stringify(sock),
+  });
+
+  if (response.status === StatusCode.Unauthorized) addCart(sock);
 });

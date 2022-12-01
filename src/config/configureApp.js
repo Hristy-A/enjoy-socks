@@ -7,6 +7,8 @@ const swap = require('../middlewares/swap');
 
 // ? configure app (middlewares and env variables)
 module.exports = function configureApp(app) {
+  app.set('x-powered-by', false);
+
   process.env.PORT ??= 3000;
   const session = require('./configureSession')(app);
 

@@ -12,7 +12,22 @@ formAuth.addEventListener('submit', async (event) => {
   if (response.ok) {
     const responseData = await response.json();
 
-    window.location.href = responseData.redirect;
+    if (hasFavorites()) {
+      await fetch('api/favorites/bulk', {
+        method: 'POST',
+        headers: ContentType.json,
+        body: getFavorites({ parse: false, clear: true }),
+      });
+    }
+    if (hasCarts()) {
+      await fetch('api/carts/bulk', {
+        method: 'POST',
+        headers: ContentType.json,
+        body: getCarts({ parse: false, clear: true }),
+      });
+    }
+
+    window.location = responseData.redirect;
   } else if (response.status === StatusCode.BadRequest) {
     const responseData = await response.json();
     const errors = document.querySelector('.error-box');
