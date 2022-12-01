@@ -61,6 +61,18 @@ module.exports = (sequelize, DataTypes) => {
       await this.Cart.create({ userId, sockId: cartSock.id });
     }
 
+    static async deleteFavorite(userId, sockId) {
+      return User.Favorite.destroy({ where: { userId, sockId } });
+    }
+
+    static async deleteCart(userId, sockId) {
+      return User.Cart.destroy({ where: { userId, sockId } });
+    }
+
+    static async addCartExisting(userId, sockId) {
+      return User.Cart.create({ userId, sockId });
+    }
+
     static async getFavorites(userid) {
       return User.findByPk(userid, {
         include: [

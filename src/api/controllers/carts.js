@@ -21,10 +21,42 @@ module.exports = function carts(cartsRoute) {
       next(error);
     }
   });
+  cartsRoute.post('/:id', auth, async (req, res, next) => {
+    try {
+      const id = Number(req.params.id);
+
+      if (!Number.isInteger(id)) {
+        res.sendStatus(StatusCode.BAD_REQUEST);
+        return;
+      }
+
+      await User.addCartExisting(req.session.user.id, id);
+
+      res.sendStatus(StatusCode.OK);
+    } catch (error) {
+      next();
+    }
+  });
   // ? get all user favorites socks
   cartsRoute.get('/', auth, async (req, res, next) => {
     try {
       res.json(await User.getCarts(req.session.user.id));
+    } catch (error) {
+      next(error);
+    }
+  });
+  // ? delete cart sock from user
+  cartsRoute.delete('/:id', auth, async (req, res, next) => {
+    try {
+      const id = Number(req.params.id);
+
+      if (!Number.isInteger(id)) {
+        res.sendStatus(StatusCode.BAD_REQUEST);
+        return;
+      }
+
+      await User.deleteCart(req.session.user.id, id);
+      res.sendStatus(StatusCode.NO_CONTENT);
     } catch (error) {
       next(error);
     }
