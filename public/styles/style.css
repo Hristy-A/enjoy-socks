@@ -25,22 +25,7 @@
 .cst-footer {
   flex: 0 0 50px;
   font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 } 
-
-.cst-home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 30px 20px 30px 20px;
-}
-
-.cst-home-element {
-    margin: 30px 20px 30px 20px;
-}
 
 .navbar-nav {
   font-size: 12px;
@@ -66,4 +51,8 @@ footer {
   background-color: whitesmoke;
   padding-bottom: 0px;
   padding-top: 0px;
+}
+
+.cst-contact-title {
+  margin-right: 5px;
 }
