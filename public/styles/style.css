@@ -20,6 +20,7 @@
 
 .cst-main {
   flex: 1 0 auto;
+
 }
 
 .cst-footer {
@@ -30,7 +31,14 @@
 .navbar-nav {
   font-size: 12px;
 }
-
+.navbar-size{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
 .cst-btn {
   margin: 5px 5px 5px 5px;
 }
@@ -59,4 +67,6 @@ footer {
 
 .cst-footer-icon {
   margin-right: 3px;
+.input-wigth{
+  width: 300px;
 }

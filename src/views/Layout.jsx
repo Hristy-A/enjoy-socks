@@ -21,7 +21,7 @@ module.exports = function Layout({ children, user, styles = '' }) {
             <nav className="navbar navbar-expand-lg bg-light cst-navbar">
               <div className="container-fluid d-flex cst-navbar">
                 <span className="pb-2">
-                  <a className="navbar-brand" href="./">
+                  <a className="navbar-brand navbar-size" href="./">
                     <img src="./images/logo.png" alt="" width="50" height="50" className="d-inline-block align-text-top cst-logo" />
                   </a>
                 </span>
