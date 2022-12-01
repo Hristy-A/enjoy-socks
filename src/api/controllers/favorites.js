@@ -23,6 +23,14 @@ module.exports = function favorites(favoritesRoute) {
       next(error);
     }
   });
+  // ? get all user favorites socks
+  favoritesRoute.get('/', auth, async (req, res, next) => {
+    try {
+      res.json(await User.getFavorites(req.session.user.id));
+    } catch (error) {
+      next(error);
+    }
+  });
 
   return favoritesRoute;
 };

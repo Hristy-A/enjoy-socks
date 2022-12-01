@@ -1,9 +1,9 @@
-const Favorites = require('../views/Favorites');
+const Loader = require('../views/sys/Loader');
 
-module.exports = function register(indexRoute) {
-  indexRoute.get('/', async (req, res, next) => {
-    res.renderComponent(Favorites);
+module.exports = function register(favoritesRoute) {
+  favoritesRoute.get('/', async (req, res, next) => {
+    res.renderComponent(Loader);
   });
 
-  return indexRoute;
+  return favoritesRoute;
 };
