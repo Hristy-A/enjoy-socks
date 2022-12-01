@@ -1,6 +1,8 @@
 const React = require('react');
 
-module.exports = function Layout({ children, user, styles = '' }) {
+module.exports = function Layout({
+  children, user, favoritesLength, styles = '',
+}) {
   return (
 
     <html lang="ru">
@@ -57,6 +59,9 @@ module.exports = function Layout({ children, user, styles = '' }) {
                         </div>
                         <div>
                           Избранное
+                          <div className="cst-favorites-length">
+                            {favoritesLength}
+                          </div>
                         </div>
                       </a>
                     </li>

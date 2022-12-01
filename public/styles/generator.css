@@ -109,3 +109,42 @@
 .cst-btn-generate:hover {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+
+  .cst-generator-box {
+    width: 400px;
+    height: 400px;
+    margin: 20px 10px 20px 10px;
+  }
+}
+
+@media (max-width: 667px) {
+
+  .cst-generator-box {
+    width: 360px;
+    height: 360px;
+    margin: 10px 30px 10px 30px;
+  }
+
+  .cst-color-select div {
+    width: 35px; 
+    height: 35px;
+    margin: 5px 5px 5px 5px;
+  }
+
+  .cst-clear {
+    width: 35px;
+    height: 35px;
+  }
+
+  .cst-generator-btn-color {
+    width: 35px;
+    height: 60px;
+  }
+
+  .cst-block-title {
+    width: 55px;
+    height: 35px;
+  }
+}
