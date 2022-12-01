@@ -2,10 +2,19 @@ function uuidv4() {
   return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
 }
 
-const ct = {
+const ContentType = {
   json: {
     'Content-Type': 'application/json',
   },
+};
+const StatusCode = {
+  Ok: 200,
+  NoContent: 204,
+  BadRequest: 400,
+  Unauthorized: 401,
+  Forbidden: 403,
+  NotFound: 404,
+  InternalServerError: 500,
 };
 
 function addFavorite(sock) {
@@ -25,8 +34,9 @@ function removeFavorite(uuid) {
 function clearFavorites() {
   localStorage.setItem('favorites', null);
 }
-function getFavorites() {
-  return JSON.parse(localStorage.getItem('favorites'));
+function getFavorites(parse = true) {
+  const favorites = localStorage.getItem('favorites');
+  return parse ? JSON.parse(favorites) : favorites;
 }
 
 function addCart(sock) {
@@ -46,6 +56,7 @@ function removeCart(uuid) {
 function clearCarts() {
   localStorage.setItem('carts', null);
 }
-function getCarts() {
-  return JSON.parse(localStorage.getItem('carts'));
+function getCarts(parse = true) {
+  const carts = localStorage.getItem('carts');
+  return parse ? JSON.parse(carts) : carts;
 }
