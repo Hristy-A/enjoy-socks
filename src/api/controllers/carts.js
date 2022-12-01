@@ -8,7 +8,8 @@ const auth = require('../../middlewares/auth').onUnauth((res) => {
 module.exports = function carts(cartsRoute) {
   cartsRoute.post('/bulk', auth, async (req, res, next) => {
     try {
-      User.addCartsBulk(req.session.user.id, req.body);
+      if (req.body && req.body.length > 0) await User.addCartsBulk(req.session.user.id, req.body);
+      res.sendStatus(StatusCode.CREATED);
     } catch (error) {
       next(error);
     }

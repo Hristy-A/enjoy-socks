@@ -9,7 +9,8 @@ module.exports = function favorites(favoritesRoute) {
   // ? add all favorites socks from local storage to user on register or login
   favoritesRoute.post('/bulk', auth, async (req, res, next) => {
     try {
-      User.addFavoritesBulk(req.session.user.id, req.body);
+      if (req.body && req.body.length > 0) await User.addFavoritesBulk(req.session.user.id, req.body);
+      res.sendStatus(StatusCode.CREATED);
     } catch (error) {
       next(error);
     }
