@@ -100,7 +100,12 @@
 .card-img, .card-img-bottom, .card-img-top {
   width: auto;
 }
-.btn2 {
+
+.cst-btn-generate {
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.cst-btn-generate:hover {
+  cursor: pointer;
 }
