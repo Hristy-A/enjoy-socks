@@ -24,7 +24,7 @@ sockPalettes.forEach((sockPalette) => {
 
 function formSock() {
   return {
-    colorId: generatorColor.dataset.id ?? 1,
+    colorId: Number(generatorColor.dataset.id) || 1,
     imageId: Number(generatorImage.dataset.id) || null,
     patternId: Number(generatorPattern.dataset.id) || null,
     price: 990, //! hardcode

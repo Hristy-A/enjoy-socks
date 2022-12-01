@@ -3,8 +3,9 @@ const Layout = require('./Layout');
 
 module.exports = function Home({ user }) {
   return (
-    <Layout user={user}>
+    <Layout user={user} styles="./styles/home.css">
       <div className="cst-home">
+
         <div className="cst-home-element"><h3>Самое время быть уникальным!</h3></div>
         <div className="cst-home-element"><h3>Смоделируй свою любимую пару носков!</h3></div>
         <img className="cst-home-element" src="./images/logo.png" alt="" width="350" height="350" />
@@ -22,6 +23,7 @@ module.exports = function Home({ user }) {
             </div>
           </a>
         </div>
+
       </div>
     </Layout>
   );

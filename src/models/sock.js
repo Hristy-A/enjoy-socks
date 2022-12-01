@@ -34,10 +34,12 @@ module.exports = (sequelize, DataTypes) => {
       this.image = Sock.belongsTo(models.Image, {
         foreignKey: 'imageId',
         as: 'image',
+        allowNull: true,
       });
       this.pattern = Sock.belongsTo(models.Pattern, {
         foreignKey: 'patternId',
         as: 'pattern',
+        allowNull: true,
       });
     }
   }
