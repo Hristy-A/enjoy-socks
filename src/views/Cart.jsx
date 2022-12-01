@@ -58,7 +58,7 @@ module.exports = function Cart({ user, socks }) {
 
         <div className="d-flex flex-wrap justify-content-center">
 
-          {arr.map((el) => (
+          {arr.map((sock) => (
             <div className="card body-cart">
               <div className="card-body d-flex justify-content-center cst-delete-btn">
                 <div className="nav-item text-center ">
@@ -74,11 +74,13 @@ module.exports = function Cart({ user, socks }) {
               <div className="d-flex justify-content-center">
 
                 <div className="cst-favorits-box">
-                  { socks.image === null && (
-                  <img className="cst-sock cst-image favorits" src={el.image.link} alt="" />)}
-                  { socks.pattern === null
-                  && (<img className="cst-sock cst-pattern favorits" src={el.pattern.link} alt="" />)}
-                  <img className="cst-sock cst-color favorits" src={el.color.link} alt="" />
+                  {sock.image !== null && (
+                  <img className="cst-sock cst-image favorits" src={sock.image.link} alt="" />
+                  )}
+                  { sock.pattern !== null && (
+                  <img className="cst-sock cst-pattern favorits" src={sock.pattern.link} alt="" />
+                  )}
+                  <img className="cst-sock cst-color favorits" src={sock.color.link} alt="" />
                 </div>
               </div>
             </div>
