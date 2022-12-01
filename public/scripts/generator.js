@@ -6,7 +6,6 @@ const generatorPattern = generatorBox.querySelector('.cst-pattern');
 const generatorColor = generatorBox.querySelector('.cst-color');
 
 sockPalettes.forEach((sockPalette) => {
-  console.log('tut', sockPalette);
   sockPalette.addEventListener('click', (event) => {
     let { target } = event;
 

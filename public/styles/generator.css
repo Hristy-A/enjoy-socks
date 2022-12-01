@@ -1,15 +1,27 @@
 .cst-color-select div {
   width: 50px; 
   height: 50px;
+  margin: 5px 5px 5px 5px;
+}
+
+.cst-clear, .cst-select-el {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.cst-clear:hover, .cst-select-el:hover {
+  transform: scale(1.1);
 }
 
 .cst-generator-box {
-  width: 800px;
-  height: 800px;
+  width: 500px;
+  height: 500px;
   border: 1px solid gray;
+  border-radius: 5px;
   position: relative;
   z-index: 1;
   background-color: rgb(59, 59, 59);
+  margin: 20px;
 }
 
 .cst-sock {
@@ -20,10 +32,9 @@
   transform: translate(-50%, -50%);
 }
 
-.cst-empty {
+.cst-clear {
   width: 50px;
   height: 50px;
-  background: red;
 }
 
 .cst-color {
@@ -46,4 +57,30 @@
 .cst-generator-btn-color {
   width: 50px;
   height: 85px;
+}
+
+.cst-btn-add {
+  margin: 20px;
+}
+
+.cst-btn-add:hover  {
+  transform: scale(1.2);
+}
+
+.cst-block-title {
+  width: 70px;
+  height: 50px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.cst-select-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cst-btn-block {
+  margin-top: 3em;
 }

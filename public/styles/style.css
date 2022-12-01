@@ -1,3 +1,7 @@
+.body{
+  background-color: white;
+  width: 100%;
+}
 
 .cst-wrapper {
   display: flex;
@@ -43,16 +47,20 @@
 }
 
 .card {
-  width: 18rem;
+  width: 180px;
   margin: 15px 15px 15px 15px;
+  border-radius: 20px;
 }
 
-.card-img-top {
-  margin: 10px 10px 10px 10px;
-  width: 250px;
-  height: 250px;
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+.cst-logo:hover {
+  transform: scale(1.1);
 }
 
 footer {
   margin: 10px 10px 10px 10px;
 }
+
