@@ -45,6 +45,7 @@
 .card {
   width: 18rem;
   margin: 15px 15px 15px 15px;
+  border-radius: 20px;
 }
 
 .card-img-top {
