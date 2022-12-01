@@ -18,7 +18,7 @@ module.exports = function favorites(favoritesRoute) {
   // ? add sock favorites from local storage to user on register or login
   favoritesRoute.post('/', auth, async (req, res, next) => {
     try {
-      res.json(await User.addFavorite(req.params.id, req.body));
+      res.json(await User.addFavorite(req.session.user.id, req.body));
     } catch (error) {
       next(error);
     }

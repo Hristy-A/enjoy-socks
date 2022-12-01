@@ -16,7 +16,7 @@ module.exports = function carts(cartsRoute) {
   });
   cartsRoute.post('/', auth, async (req, res, next) => {
     try {
-      res.json(await User.addCart(req.params.id, req.body));
+      res.json(await User.addCart(req.session.user.id, req.body));
     } catch (error) {
       next(error);
     }
