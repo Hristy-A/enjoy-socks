@@ -31,8 +31,11 @@ function removeFavorite(uuid) {
   const favorites = JSON.parse(localStorage.getItem('favorites'));
   if (!favorites) return;
   const sockId = favorites.findIndex((sock) => sock.uuid === uuid);
-  if (sockId !== -1) favorites.splice(sockId, 1);
-  localStorage.setItem('favorites', JSON.stringify(favorites));
+  if (sockId !== -1) {
+    const [favoriteSock] = favorites.splice(sockId, 1);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    return favoriteSock;
+  }
 }
 function clearFavorites() {
   localStorage.setItem('favorites', null);
@@ -42,6 +45,12 @@ function getFavorites({ parse = true, clear = false } = {}) {
   if (clear) clearFavorites();
   return parse ? JSON.parse(favorites) : (favorites === null || favorites === 'null' ? '[]' : favorites);
 }
+function swapToCart(uuid) {
+  const favoriteSock = removeFavorite(uuid);
+  if (favoriteSock) {
+    addExistingCart(favoriteSock);
+  }
+}
 
 function addCart(sock) {
   sock.uuid = uuidv4();
@@ -49,6 +58,11 @@ function addCart(sock) {
   carts.push(sock);
   localStorage.setItem('carts', JSON.stringify(carts));
   return sock.uuid;
+}
+function addExistingCart(sock) {
+  const carts = JSON.parse(localStorage.getItem('carts')) ?? [];
+  carts.push(sock);
+  localStorage.setItem('carts', JSON.stringify(carts));
 }
 function hasCarts() {
   return JSON.parse(localStorage.getItem('carts')) !== null;

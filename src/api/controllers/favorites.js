@@ -31,6 +31,21 @@ module.exports = function favorites(favoritesRoute) {
       next(error);
     }
   });
+  favoritesRoute.delete('/:id', auth, async (req, res, next) => {
+    try {
+      const id = Number(req.params.id);
+
+      if (!Number.isInteger(id)) {
+        res.sendStatus(StatusCode.BAD_REQUEST);
+        return;
+      }
+
+      await User.deleteFavorite(req.session.user.id, id);
+      res.sendStatus(StatusCode.NO_CONTENT);
+    } catch (error) {
+      next(error);
+    }
+  });
 
   return favoritesRoute;
 };
