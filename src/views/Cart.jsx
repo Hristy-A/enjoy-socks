@@ -1,6 +1,8 @@
 const React = require('react');
 const Layout = require('./Layout');
 
+// TODO: Сделать пустое избранное
+
 const arr = [
   {
     color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
