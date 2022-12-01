@@ -1,3 +1,7 @@
+.body{
+  background-color: white;
+  width: 100%;
+}
 
 .cst-wrapper {
   display: flex;
@@ -43,7 +47,7 @@
 }
 
 .card {
-  width: 18rem;
+  width: 180px;
   margin: 15px 15px 15px 15px;
   border-radius: 20px;
 }
@@ -57,3 +61,4 @@
 footer {
   margin: 10px 10px 10px 10px;
 }
+
