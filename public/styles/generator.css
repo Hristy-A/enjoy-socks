@@ -7,20 +7,30 @@
 .cst-clear, .cst-select-el {
   margin: 5px 5px 5px 5px;
   cursor: pointer;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cst-clear:hover, .cst-select-el:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+}
+
+.cst-select-el:active {
+  border: 1px;
+  border-color: black;
+  border-style: inset;
 }
 
 .cst-generator-box {
   width: 500px;
   height: 500px;
-  border: 1px solid gray;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   position: relative;
   z-index: 1;
-  background-color: rgb(59, 59, 59);
+  background-color: whitesmoke;
   margin: 20px;
 }
 
@@ -50,7 +60,6 @@
 }
 
 .cst-generator-btn {
-  width: 50px;
   height: 50px;
 }
 
@@ -71,8 +80,11 @@
   width: 70px;
   height: 50px;
   display: flex;
-  justify-content:center;
+  justify-content:left;
   align-items: center;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .cst-select-block {
@@ -83,4 +95,8 @@
 
 .cst-btn-block {
   margin-top: 3em;
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+  width: auto;
 }
