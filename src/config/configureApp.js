@@ -2,8 +2,10 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 const ssr = require('../middlewares/ssr');
 const swap = require('../middlewares/swap');
+const validateSession = require('../middlewares/validateSession');
 
 // ? configure app (middlewares and env variables)
 module.exports = function configureApp(app) {
@@ -18,5 +20,7 @@ module.exports = function configureApp(app) {
   app.use(express.urlencoded({ extended: true }));
   app.use(express.static(path.resolve('public')));
   app.use(swap);
+  app.use(cookieParser());
+  app.use(validateSession);
   app.use(ssr);
 };
