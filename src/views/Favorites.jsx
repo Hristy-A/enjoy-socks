@@ -5,7 +5,7 @@ const Layout = require('./Layout');
 
 module.exports = function Favorites({ user, socks }) {
   return (
-    <Layout user={user} styles="./styles/favorites.css">
+    <Layout user={user} favoritesLength={socks.length} styles="./styles/favorites.css">
       <div className="body">
 
         <div className="d-flex flex-wrap justify-content-center">
