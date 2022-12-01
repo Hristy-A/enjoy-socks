@@ -22,7 +22,7 @@ module.exports = function Layout({ children, user, styles = '' }) {
               <div className="container-fluid d-flex">
                 <span className="pb-2">
                   <a className="navbar-brand" href="./">
-                    <img src="./images/logo.png" alt="" width="50" height="50" className="d-inline-block align-text-top" />
+                    <img src="./images/logo.png" alt="" width="50" height="50" className="d-inline-block align-text-top cst-logo" />
                   </a>
                 </span>
                 <h3>Enjoy Socks</h3>

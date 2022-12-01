@@ -2,7 +2,6 @@ const generatorBox = document.querySelector('.cst-generator-box');
 const sockPalettes = document.querySelectorAll('.cst-select-parent');
 
 sockPalettes.forEach((sockPalette) => {
-  console.log('tut', sockPalette);
   sockPalette.addEventListener('click', (event) => {
     let { target } = event;
 
