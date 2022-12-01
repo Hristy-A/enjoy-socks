@@ -3,54 +3,6 @@ const Layout = require('./Layout');
 
 // TODO: Сделать пустое избранное
 
-const arr = [
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-];
-
 module.exports = function Cart({ user, socks }) {
   return (
     <Layout user={user} styles="./styles/favorites.css">
@@ -58,7 +10,7 @@ module.exports = function Cart({ user, socks }) {
 
         <div className="d-flex flex-wrap justify-content-center">
 
-          {arr.map((el) => (
+          {socks.map((sock) => (
             <div className="card body-cart">
               <div className="card-body d-flex justify-content-center cst-delete-btn">
                 <div className="nav-item text-center ">
@@ -74,9 +26,9 @@ module.exports = function Cart({ user, socks }) {
               <div className="d-flex justify-content-center">
 
                 <div className="cst-favorits-box">
-                  <img className="cst-sock cst-image favorits" src={el.image.link} alt="" />
-                  <img className="cst-sock cst-pattern favorits" src={el.pattern.link} alt="" />
-                  <img className="cst-sock cst-color favorits" src={el.color.link} alt="" />
+                  <img className="cst-sock cst-image favorits" src={sock.image?.link} alt="" />
+                  <img className="cst-sock cst-pattern favorits" src={sock.pattern?.link} alt="" />
+                  <img className="cst-sock cst-color favorits" src={sock.color.link} alt="" />
                 </div>
               </div>
             </div>

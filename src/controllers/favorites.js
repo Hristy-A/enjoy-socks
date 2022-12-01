@@ -1,8 +1,8 @@
-const Loader = require('../views/sys/Loader');
+const LoaderFavorites = require('../views/sys/LoaderFavorites');
 
 module.exports = function register(favoritesRoute) {
   favoritesRoute.get('/', async (req, res, next) => {
-    res.renderComponent(Loader);
+    res.renderComponent(LoaderFavorites);
   });
 
   return favoritesRoute;
