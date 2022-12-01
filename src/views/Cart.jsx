@@ -5,10 +5,10 @@ const Layout = require('./Layout');
 
 const arr = [
   {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
+    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '' }, image: { link: '' }, price: 990, size: 'S',
   },
   {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
+    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '' }, image: { link: '' }, price: 990, size: 'M',
   },
   {
     color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
@@ -74,8 +74,10 @@ module.exports = function Cart({ user, socks }) {
               <div className="d-flex justify-content-center">
 
                 <div className="cst-favorits-box">
-                  <img className="cst-sock cst-image favorits" src={el.image.link} alt="" />
-                  <img className="cst-sock cst-pattern favorits" src={el.pattern.link} alt="" />
+                  { socks.image === null && (
+                  <img className="cst-sock cst-image favorits" src={el.image.link} alt="" />)}
+                  { socks.pattern === null
+                  && (<img className="cst-sock cst-pattern favorits" src={el.pattern.link} alt="" />)}
                   <img className="cst-sock cst-color favorits" src={el.color.link} alt="" />
                 </div>
               </div>

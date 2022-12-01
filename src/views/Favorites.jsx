@@ -28,7 +28,7 @@ module.exports = function Favorites({ user, socks }) {
                 <div>
                   <div className="cst-favorits-box">
                     <img className="cst-sock cst-image favorits" src={el.image.link} alt="" />
-                    <img className="cst-sock cst-pattern favorits" src={el.pattern.link} alt="" />
+                    <img className="cst-sock cst-pattern favorits" src="" alt="" />
                     <img className="cst-sock cst-color favorits" src={el.color.link} alt="" />
                   </div>
                 </div>
