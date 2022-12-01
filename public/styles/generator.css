@@ -100,3 +100,7 @@
 .card-img, .card-img-bottom, .card-img-top {
   width: auto;
 }
+.btn2 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
