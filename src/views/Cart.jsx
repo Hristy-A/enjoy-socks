@@ -3,54 +3,6 @@ const Layout = require('./Layout');
 
 // TODO: Сделать пустое избранное
 
-const arr = [
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '' }, image: { link: '' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '' }, image: { link: '' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-  {
-    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
-  },
-  {
-    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
-  },
-  {
-    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
-  },
-];
-
 module.exports = function Cart({ user, socks }) {
   return (
     <Layout user={user} styles="./styles/favorites.css">
@@ -58,7 +10,7 @@ module.exports = function Cart({ user, socks }) {
 
         <div className="d-flex flex-wrap justify-content-center">
 
-          {arr.map((sock) => (
+          {socks.map((sock) => (
             <div className="card body-cart">
               <div className="card-body d-flex justify-content-center cst-delete-btn">
                 <div className="nav-item text-center ">

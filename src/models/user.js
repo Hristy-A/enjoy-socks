@@ -87,6 +87,32 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
 
+    static async getCarts(userid) {
+      return User.findByPk(userid, {
+        include: [
+          {
+            model: this.Sock,
+            order: [['createdAt', 'DESC']],
+            as: 'purchases',
+            include: [
+              {
+                model: this.Color,
+                as: 'color',
+              },
+              {
+                model: this.Pattern,
+                as: 'pattern',
+              },
+              {
+                model: this.Image,
+                as: 'image',
+              },
+            ],
+          },
+        ],
+      });
+    }
+
     static associate(models) {
       Object.assign(this, models);
       this.favorites = User.belongsToMany(models.Sock, {

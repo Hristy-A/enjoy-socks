@@ -1,9 +1,9 @@
-const Cart = require('../views/Cart');
+const LoaderCarts = require('../views/sys/LoaderCarts');
 
-module.exports = function register(indexRoute) {
-  indexRoute.get('/', async (req, res, next) => {
-    res.renderComponent(Cart);
+module.exports = function register(cartsRoute) {
+  cartsRoute.get('/', async (req, res, next) => {
+    res.renderComponent(LoaderCarts);
   });
 
-  return indexRoute;
+  return cartsRoute;
 };

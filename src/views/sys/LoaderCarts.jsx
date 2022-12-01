@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Loader() {
+module.exports = function LoaderCarts() {
   return (
     <html lang="ru">
       <head>
@@ -8,7 +8,7 @@ module.exports = function Loader() {
       </head>
       <body>
         <script src="./scripts/app.js" />
-        <script src="./scripts/sys/loader.js" />
+        <script src="./scripts/sys/loaderCarts.js" />
       </body>
     </html>
   );

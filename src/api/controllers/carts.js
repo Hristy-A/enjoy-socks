@@ -21,6 +21,14 @@ module.exports = function carts(cartsRoute) {
       next(error);
     }
   });
+  // ? get all user favorites socks
+  cartsRoute.get('/', auth, async (req, res, next) => {
+    try {
+      res.json(await User.getCarts(req.session.user.id));
+    } catch (error) {
+      next(error);
+    }
+  });
 
   return cartsRoute;
 };
