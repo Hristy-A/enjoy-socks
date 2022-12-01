@@ -146,19 +146,24 @@ module.exports = function Layout({ children, user, styles = '' }) {
             {children}
           </main>
           <footer className="cst-footer">
-            <span>
-              <b>Почта:</b>
-              {' '}
-              info@enjoysocks.ru |
-              {' '}
-              <b>Адрес:</b>
-              {' '}
-              г. Москва, Шоссе Энтузиастов д. 12 ст. 2 |
-              {' '}
-              <b>Номер телефона:</b>
-              {' '}
+            <div className="d-flex">
+              <b className="cst-contact-title">
+                Почта:
+              </b>
+              info@enjoysocks.ru
+            </div>
+            <div className="d-flex">
+              <b className="cst-contact-title">
+                Адрес:
+              </b>
+              г. Москва, Шоссе Энтузиастов д. 12 ст. 2
+            </div>
+            <div className="d-flex">
+              <b className="cst-contact-title">
+                Номер телефона:
+              </b>
               +7 999 666 36 36
-            </span>
+            </div>
           </footer>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossOrigin="anonymous" />
