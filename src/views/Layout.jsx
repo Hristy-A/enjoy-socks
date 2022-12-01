@@ -13,6 +13,7 @@ module.exports = function Layout({ children, user, styles = '' }) {
         <link rel="stylesheet" href="./styles/style.css" />
         { styles && <link rel="stylesheet" href={styles} /> }
         <title>Enjoy Socks</title>
+        <script src="./scripts/app.js" />
       </head>
 
       <body>

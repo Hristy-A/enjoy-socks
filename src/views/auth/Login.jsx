@@ -1,15 +1,13 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function Login({ error, user }) {
+module.exports = function Login() {
   return (
-    <Layout user={user}>
+    <Layout>
       <div>
         <form id="auth" action="/login" method="POST">
 
-          <div className="error-box">
-            {error ?? ''}
-          </div>
+          <div className="error-box" />
 
           <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">📩</span>
@@ -28,7 +26,7 @@ module.exports = function Login({ error, user }) {
         </form>
       </div>
 
-      <script defer src="auth.js" />
+      <script defer src="./scripts/auth.js" />
     </Layout>
   );
 };

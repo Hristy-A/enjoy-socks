@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('../Layout');
 
-module.exports = function Register({ error }) {
+module.exports = function Register() {
   return (
     <Layout additionalStyle="auth.css">
 
@@ -10,9 +10,7 @@ module.exports = function Register({ error }) {
         <form id="auth" action="/register" method="POST">
           <div className="login-box">
 
-            <div className="error-box">
-              {error ?? ''}
-            </div>
+            <div className="error-box" />
 
             <div className="input-group mb-3">
               <span className="input-group-text" id="basic-addon1">👤</span>
@@ -43,7 +41,7 @@ module.exports = function Register({ error }) {
 
       </div>
 
-      <script defer src="auth.js" />
+      <script defer src="./scripts/auth.js" />
     </Layout>
   );
 };
