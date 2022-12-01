@@ -16,8 +16,12 @@ module.exports = function Favorites({ user, socks }) {
                 <div>
                   <div className="cst-favorits-box">
 
+                    {sock.image !== null && (
                     <img className="cst-sock cst-image favorits" src={sock.image?.link ?? ''} alt="" />
+                    )}
+                    {sock.pattern !== null && (
                     <img className="cst-sock cst-pattern favorits" src={sock.pattern?.link ?? ''} alt="" />
+                    )}
                     <img className="cst-sock cst-color favorits" src={sock.color.link} alt="" />
 
                   </div>
