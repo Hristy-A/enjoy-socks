@@ -3,7 +3,7 @@ const Layout = require('../Layout');
 
 module.exports = function Register() {
   return (
-    <Layout additionalStyle="auth.css">
+    <Layout styles="./styles/auth.css">
 
       <div className="d-flex justify-content-center">
 
@@ -32,20 +32,19 @@ module.exports = function Register() {
               <input type="password" name="password" id="password" required pattern="\w{4,}" className="form-control" placeholder="Пароль" aria-describedby="basic-addon1" />
             </div>
 
-            <div className="nav-item text-center">
-              <a className="nav-link" href="/login">
-                <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" className="bi bi-save-fill" viewBox="0 0 16 16">
-                    <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293V1.5z" />
-                  </svg>
-                </div>
-                <div>
-                  Зарегестрироваться!
-                </div>
-              </a>
+            <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center cst-btn-log-reg">
+                <button className="button-off" type="submit">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" className="bi bi-save-fill" viewBox="0 0 16 16">
+                      <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293V1.5z" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
-          </div>
 
+          </div>
         </form>
 
       </div>

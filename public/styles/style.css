@@ -44,7 +44,7 @@
 }
 
 footer {
-  margin: 10px 10px 10px 10px;
+  margin: 50px 10px 20px 10px;
 }
 
 .cst-navbar {
@@ -55,4 +55,8 @@ footer {
 
 .cst-contact-title {
   margin-right: 5px;
+}
+
+.cst-footer-icon {
+  margin-right: 3px;
 }
