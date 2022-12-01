@@ -2,21 +2,51 @@ const React = require('react');
 const Layout = require('./Layout');
 
 const arr = [
-  { color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S' },
-  { color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M' },
-  { color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L' },
-  { color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S' },
-  { color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M' },
-  { color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L' },
-  { color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S' },
-  { color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M' },
-  { color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L' },
-  { color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S' },
-  { color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M' },
-  { color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L' },
-  { color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S' },
-  { color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M' },
-  { color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L' },
+  {
+    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
+  },
+  {
+    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
+  },
+  {
+    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
+  },
+  {
+    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
+  },
+  {
+    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
+  },
+  {
+    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
+  },
+  {
+    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
+  },
+  {
+    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
+  },
+  {
+    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
+  },
+  {
+    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
+  },
+  {
+    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
+  },
+  {
+    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
+  },
+  {
+    color: { link: '/images/socks/colors/blue.png' }, pattern: { link: '/images/socks/patterns/1.png' }, image: { link: '/images/socks/images/1.png' }, price: 990, size: 'S',
+  },
+  {
+    color: { link: '/images/socks/colors/green.png' }, pattern: { link: '/images/socks/patterns/2.png' }, image: { link: '/images/socks/images/2.png' }, price: 990, size: 'M',
+  },
+  {
+    color: { link: '/images/socks/colors/purple.png' }, pattern: { link: '/images/socks/patterns/3.png' }, image: { link: '/images/socks/images/3.png' }, price: 990, size: 'L',
+  },
 ];
 
 module.exports = function Cart({ user, socks }) {
@@ -31,7 +61,7 @@ module.exports = function Cart({ user, socks }) {
 
               <div className="d-flex justify-content-center">
 
-              <div className="cst-favorits-box">
+                <div className="cst-favorits-box">
                   <img className="cst-sock cst-image favorits" src={el.image.link} alt="" />
                   <img className="cst-sock cst-pattern favorits" src={el.pattern.link} alt="" />
                   <img className="cst-sock cst-color favorits" src={el.color.link} alt="" />
@@ -39,8 +69,6 @@ module.exports = function Cart({ user, socks }) {
 
               </div>
               <div className="card-body d-flex justify-content-center">
-
-              
 
                 <a href="#" className="btn btn-primary cst-btn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
