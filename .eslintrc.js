@@ -30,5 +30,6 @@ module.exports = {
     'no-use-before-define': 0,
     'no-mixed-operators': 0,
     'no-bitwise': 0,
+    'no-nested-ternary': 0,
   },
 };
