@@ -63,12 +63,10 @@ module.exports = (sequelize, DataTypes) => {
 
     static async getFavorites(userid) {
       return User.findByPk(userid, {
-        attributes: ['id'],
         include: [
           {
-            order: [['createdAt', 'DESC']],
             model: this.Sock,
-            through: this.Favorite,
+            order: [['createdAt', 'DESC']],
             as: 'favorites',
             include: [
               {
@@ -86,8 +84,6 @@ module.exports = (sequelize, DataTypes) => {
             ],
           },
         ],
-        raw: true,
-        nest: true,
       });
     }
 
@@ -105,8 +101,6 @@ module.exports = (sequelize, DataTypes) => {
         otherKey: 'sockId',
         as: 'purchases',
       });
-
-      this.models = models;
     }
   }
   User.init({

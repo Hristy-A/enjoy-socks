@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-  let response = await fetch('/renderFavorites');
+  let response = await fetch('/renderFavorites', { method: 'POST' });
 
   if (response.ok) return document.write(await response.text());
   if (response.status === StatusCode.Unauthorized) {
@@ -12,6 +12,6 @@ window.addEventListener('DOMContentLoaded', async () => {
       },
     );
 
-    if (response.ok) return document.write(await response.text());
+    document.write(await response.text());
   }
 });
