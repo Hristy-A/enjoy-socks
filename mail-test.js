@@ -17,7 +17,7 @@ async function sendMail() {
   const result = await transporter.sendMail({
     from: 'Enjoy Socks <enjoysocks@mail.ru>',
     to: 'enjoysocks@mail.ru, enjoysocks@mail.ru',
-    subject: 'Message from Node js',
+    subject: 'Новый заказ',
     text: 'This message was sent from Node js server.',
     html:
     'This <i>message</i> was sent from <strong>Node js</strong> server.',
