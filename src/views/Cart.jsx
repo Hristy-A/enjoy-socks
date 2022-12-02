@@ -52,8 +52,7 @@ module.exports = function Cart({ user, socks }) {
 
       <div className="body">
         <div data-card-container className="d-flex flex-wrap justify-content-center">
-          {socks.length === 0 && (
-          <div className="d-flex flex-column justify-content-center align-items-center">
+          <div data-empty-cart-message className={`${socks.length === 0 ? 'd-flex flex-column justify-content-center align-items-center' : 'd-none'}`}>
             <div>
               <h3>
                 В корзине пусто
@@ -69,10 +68,9 @@ module.exports = function Cart({ user, socks }) {
               </h5>
             </div>
           </div>
-          )}
         </div>
 
-        <div className="d-flex flex-wrap justify-content-center">
+        <div data-socks-cards-container className="d-flex flex-wrap justify-content-center">
           {socks.map((sock) => (
             <div data-card className="card body-cart cst-card-container">
               <div className="card-body d-flex justify-content-center cst-delete-btn">
@@ -100,8 +98,7 @@ module.exports = function Cart({ user, socks }) {
           ))}
         </div>
 
-        {socks.length !== 0 && (
-        <div>
+        <div data-make-cell-btns className={`${socks.length === 0 ? 'd-none' : 'd-block'}`}>
           <div className="buy">
 
             <div className="nav-item text-center">
@@ -152,7 +149,6 @@ module.exports = function Cart({ user, socks }) {
           </div>
 
         </div>
-        )}
 
       </div>
       <script src="./scripts/cart.js" />

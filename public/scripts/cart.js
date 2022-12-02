@@ -1,3 +1,7 @@
+const makeCellBtns = document.querySelector('[data-make-cell-btns]');
+const emptyCartMsg = document.querySelector('[data-empty-cart-message]');
+const socksCartContainer = document.querySelector('[data-socks-cards-container]');
+
 document.querySelector('main').addEventListener('click', async (event) => {
   const { target } = event;
   const aim = target.closest('[data-delete-btn]');
@@ -7,6 +11,11 @@ document.querySelector('main').addEventListener('click', async (event) => {
   else await fetch(`/api/carts/${aim.dataset.id}`, { method: 'DELETE' });
 
   target.closest('[data-card]')?.remove();
+
+  if (socksCartContainer.children.length === 0) {
+    makeCellBtns.className = 'd-none';
+    emptyCartMsg.className = 'd-flex flex-column justify-content-center align-items-center';
+  }
 });
 
 const formOrderBtn = document.getElementById('form-order');
