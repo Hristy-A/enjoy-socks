@@ -110,7 +110,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
   .cst-generator-box {
     width: 400px;
@@ -147,4 +147,4 @@
     width: 55px;
     height: 35px;
   }
-}
+} */

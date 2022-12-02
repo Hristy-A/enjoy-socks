@@ -1,15 +1,31 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-// TODO: Сделать пустое избранное
-
 module.exports = function Cart({ user, socks }) {
   return (
     <Layout user={user} styles="./styles/favorites.css">
       <div className="body">
 
-        <div className="d-flex flex-wrap justify-content-center">
+        {socks.length === 0 && (
+        <div className="d-flex flex-column justify-content-center align-items-center">
+          <div>
+            <h3>
+              В корзине пусто
+            </h3>
+          </div>
+          <div>
+            <h5>
+              Добавляйте товары с помощью
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-basket2" viewBox="0 0 16 16">
+                <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z" />
+                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z" />
+              </svg>
+            </h5>
+          </div>
+        </div>
+        )}
 
+        <div className="d-flex flex-wrap justify-content-center">
           {socks.map((sock) => (
             <div data-card className="card body-cart">
               <div className="card-body d-flex justify-content-center cst-delete-btn">
@@ -35,21 +51,22 @@ module.exports = function Cart({ user, socks }) {
               </div>
             </div>
           ))}
-
         </div>
+
+        {socks.length !== 0 && (
         <div>
           <div className="buy">
 
             <div className="nav-item text-center">
               <a className="nav-link" href="/generator">
                 <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-plus-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                   </svg>
                 </div>
                 <div>
-                  Купить ещё!
+                  Купить ещё
                 </div>
               </a>
             </div>
@@ -57,19 +74,20 @@ module.exports = function Cart({ user, socks }) {
             <div className="nav-item text-center">
               <a className="nav-link" href="/">
                 <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-cart-check" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-cart-check" viewBox="0 0 16 16">
                     <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
                     <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                   </svg>
                 </div>
                 <div>
-                  Оформить заказ!
+                  Оформить
                 </div>
               </a>
             </div>
           </div>
 
         </div>
+        )}
 
       </div>
       <script src="./scripts/cart.js" />
