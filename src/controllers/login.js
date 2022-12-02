@@ -20,7 +20,7 @@ module.exports = function register(loginRoute) {
           case 'NotFoundError':
             res.status(StatusCode.BAD_REQUEST).json({ notfound: true });
             break;
-          case 'SequelizeValidationError':
+          case 'ValidationErrorItem':
             res.status(StatusCode.BAD_REQUEST).json({ validation: true });
             break;
           default:

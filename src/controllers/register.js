@@ -18,10 +18,10 @@ module.exports = function register(registerRoute) {
       } catch (error) {
         switch (error.name) {
           case 'SequelizeValidationError':
-            res.status(StatusCode.BAD_REQUEST).json({ duplicate: true });
+            res.status(StatusCode.BAD_REQUEST).json({ validation: true });
             break;
           case 'SequelizeUniqueConstraintError':
-            res.status(StatusCode.BAD_REQUEST).json({ validation: true });
+            res.status(StatusCode.BAD_REQUEST).json({ duplicate: true });
             break;
           default:
             next(error);
