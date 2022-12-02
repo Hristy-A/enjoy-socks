@@ -62,11 +62,6 @@
     transform: translate(-50%, -50%);
   }
 
-  .bi {
-    margin: 10px;
-    color: #212529;
-  }
-
   .buy {
     width: 500px;
     height: 150px;
@@ -76,10 +71,24 @@
     flex-direction: row;
     font-size: 30px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .cst-delete-btn {
     margin-left: 200px;
     padding: 0px;
   }
+
+  .button-off {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+.cst-modal-btn-text {
+  font-size: 20px;
+  cursor: pointer;
+}

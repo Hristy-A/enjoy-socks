@@ -8,7 +8,7 @@ module.exports = function Home({ user }) {
 
         <div className="cst-home-title"><h3>Самое время быть уникальным!</h3></div>
         <div className="cst-home-title2"><h3>Смоделируй свою любимую пару носков!</h3></div>
-        <img className="cst-home-img" src="./images/logo.png" alt="" width="350" height="350" />
+        <img className="cst-home-img" src="./images/logo-title-image.png" alt="" width="500" />
 
         <div className="nav-item text-center cst-nav-item">
           <a className="nav-link" href="/generator">

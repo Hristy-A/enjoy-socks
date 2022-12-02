@@ -7,7 +7,7 @@ module.exports = function Login() {
       <div>
         <form id="auth" action="/login" method="POST">
 
-          <div className="error-box" />
+          <div className="error-box text-center" />
 
           <div className="input-group mb-3 input-wigth">
             <span className="input-group-text " id="basic-addon1">📩</span>
@@ -17,6 +17,15 @@ module.exports = function Login() {
           <div className="input-group mb-3 input-wigth">
             <span className="input-group-text" id="basic-addon1">🔑</span>
             <input type="password" name="password" id="password" required pattern="\w{4,}" className="form-control" placeholder="Пароль" aria-describedby="basic-addon1" />
+          </div>
+
+          <div className="text-center">
+            <span>
+              {' '}
+              Или
+              {' '}
+              <a className="text-decoration-none" href="/register">зарегистрируйтесь</a>
+            </span>
           </div>
 
           <div className="d-flex justify-content-center">
