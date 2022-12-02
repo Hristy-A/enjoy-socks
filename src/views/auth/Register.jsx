@@ -24,7 +24,7 @@ module.exports = function Register() {
 
             <div className="input-group mb-3 input-wigth">
               <span className="input-group-text" id="basic-addon1">📞</span>
-              <input type="phone" name="phone" id="phone" className="form-control" placeholder="Номер телефона" aria-describedby="basic-addon1" />
+              <input type="phone" name="phone" id="phone" required className="form-control" placeholder="Номер телефона" aria-describedby="basic-addon1" />
             </div>
 
             <div className="input-group mb-3 input-wigth">
