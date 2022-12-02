@@ -13,6 +13,7 @@ module.exports = function Cart({ user, socks }) {
             </div>
             <div className="modal-body">
               <div className="container">
+                <div className="validation-errors" />
                 <form method="POST" action="/api/orders" id="form-order-form">
                   <div className="mb-3">
                     <label htmlFor="name" className="form-label">Получатель</label>
