@@ -61,7 +61,7 @@ module.exports = function Layout({
                         <div>
                           Избранное
                           <div className="cst-favorites-length">
-                            {favoritesLength}
+                            {/* {favoritesLength} */}
                           </div>
                         </div>
                       </a>
