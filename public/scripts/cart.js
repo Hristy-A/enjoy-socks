@@ -10,14 +10,23 @@ document.querySelector('main').addEventListener('click', async (event) => {
 });
 
 const formOrderBtn = document.getElementById('form-order');
-const closeModalBtn = document.querySelector('');
+const closeModalBtn = document.querySelector('#close-modal-btn');
+const validationErrors = document.querySelector('.validation-errors');
 formOrderBtn.addEventListener('click', async (event) => {
   const orderForm = formOrderBtn.closest('#form-order-modal').querySelector('#form-order-form');
-  await fetch('api/users/orders', {
+  const response = await fetch('api/users/orders', {
     method: 'POST',
     headers: ContentType.json,
     body: JSON.stringify(Object.fromEntries([...new FormData(orderForm).entries()])),
   });
+
+  if (response.status === StatusCode.BadRequest) {
+    validationErrors.innerHTML = '<div>Введите данные в верном формате</div>';
+    return;
+  }
+  if (response.ok) {
+    closeModalBtn.click();
+  }
 });
 
 // const observer = new MutationObserver();

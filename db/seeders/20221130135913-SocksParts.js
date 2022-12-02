@@ -9,19 +9,19 @@ module.exports = {
           'Patterns',
           [
             {
-              link: './images/socks/patterns/1.png',
+              link: './images/socks/patterns/triangles.png',
               origin: './images/socks/patterns/origin/1.png',
             },
             {
-              link: './images/socks/patterns/2.png',
+              link: './images/socks/patterns/polkadot.png',
               origin: './images/socks/patterns/origin/2.png',
             },
             {
-              link: './images/socks/patterns/3.png',
+              link: './images/socks/patterns/night-sky.png',
               origin: './images/socks/patterns/origin/3.png',
             },
             {
-              link: './images/socks/patterns/4.png',
+              link: './images/socks/patterns/math.png',
               origin: './images/socks/patterns/origin/4.png',
             },
           ],
@@ -31,19 +31,19 @@ module.exports = {
           'Images',
           [
             {
-              link: './images/socks/images/1.png',
+              link: './images/socks/images/cactus.png',
               origin: './images/socks/images/origin/1.png',
             },
             {
-              link: './images/socks/images/2.png',
+              link: './images/socks/images/yoda.png',
               origin: './images/socks/images/origin/2.png',
             },
             {
-              link: './images/socks/images/3.png',
+              link: './images/socks/images/duck.png',
               origin: './images/socks/images/origin/3.png',
             },
             {
-              link: './images/socks/images/4.png',
+              link: './images/socks/images/lama.png',
               origin: './images/socks/images/origin/4.png',
             },
           ],

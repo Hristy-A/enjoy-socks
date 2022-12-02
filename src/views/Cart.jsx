@@ -13,6 +13,7 @@ module.exports = function Cart({ user, socks }) {
             </div>
             <div className="modal-body">
               <div className="container">
+                <div className="validation-errors" />
                 <form method="POST" action="/api/orders" id="form-order-form">
                   <div className="mb-3">
                     <label htmlFor="name" className="form-label">Получатель</label>
@@ -31,7 +32,7 @@ module.exports = function Cart({ user, socks }) {
             </div>
 
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+              <button id="close-modal-btn" type="button" className="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
               <button id="form-order" type="button" className="btn btn-primary">Оформить заказ</button>
             </div>
           </div>
