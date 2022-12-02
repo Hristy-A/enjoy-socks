@@ -17,7 +17,7 @@ module.exports = {
               origin: './images/socks/patterns/origin/2.png',
             },
             {
-              link: './images/socks/patterns/night-sky.png',
+              link: './images/socks/patterns/nightsky.png',
               origin: './images/socks/patterns/origin/3.png',
             },
             {
