@@ -74,9 +74,17 @@
     justify-content: center;
   }
 
+.cst-card-container {
+  position: relative;
+}
+  
   .cst-delete-btn {
-    margin-left: 200px;
-    padding: 0px;
+    z-index: 2;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    /* margin-left: 200px;
+    padding: 0px; */
   }
 
   .button-off {

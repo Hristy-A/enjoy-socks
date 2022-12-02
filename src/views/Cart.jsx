@@ -74,7 +74,7 @@ module.exports = function Cart({ user, socks }) {
 
         <div className="d-flex flex-wrap justify-content-center">
           {socks.map((sock) => (
-            <div data-card className="card body-cart">
+            <div data-card className="card body-cart cst-card-container">
               <div className="card-body d-flex justify-content-center cst-delete-btn">
                 <div data-delete-btn data-id-type={sock.uuid ? 'uuid' : 'id'} data-uuid={sock.uuid} data-id={sock.id} className="nav-item text-center">
                   <div>
