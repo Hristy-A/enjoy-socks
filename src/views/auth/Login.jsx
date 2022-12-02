@@ -11,7 +11,7 @@ module.exports = function Login() {
 
           <div className="input-group mb-3 input-wigth">
             <span className="input-group-text " id="basic-addon1">📩</span>
-            <input type="text" name="email" id="email" className="form-control" placeholder="Электронная почта" aria-describedby="basic-addon1" />
+            <input type="text" name="email" id="email" required className="form-control" placeholder="Электронная почта" aria-describedby="basic-addon1" />
           </div>
 
           <div className="input-group mb-3 input-wigth">

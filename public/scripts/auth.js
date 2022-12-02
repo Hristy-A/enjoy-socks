@@ -30,7 +30,23 @@ formAuth.addEventListener('submit', async (event) => {
     window.location = responseData.redirect;
   } else if (response.status === StatusCode.BadRequest) {
     const responseData = await response.json();
+    console.log(responseData);
+
+    let error = '';
+
+    if (responseData.notfound) {
+      error = 'Неверное имя пользователя или пароль';
+      console.log(error);
+    } else if (responseData.duplicate) {
+      error = 'Пользователь уже существует';
+    } else if (responseData.validation) {
+      error = 'Введите данные в указанном формате';
+    } else {
+      error = 'Что-то пошло не так...';
+      console.log(error);
+    }
+
     const errors = document.querySelector('.error-box');
-    errors.innerHTML = `<div class="error">${'error'}</div>`; //! hardcode
+    errors.innerHTML = `<div class="error">${error}</div>`;
   }
 });
