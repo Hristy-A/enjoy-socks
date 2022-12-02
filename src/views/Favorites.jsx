@@ -6,8 +6,7 @@ module.exports = function Favorites({ user, socks }) {
     <Layout user={user} favoritesLength={socks.length} styles="./styles/favorites.css">
       <div className="body">
 
-        {socks.length === 0 && (
-        <div className="d-flex flex-column justify-content-center align-items-center">
+        <div data-empty-message className={`${socks.length === 0 ? 'd-flex flex-column justify-content-center align-items-center' : 'd-none'}`}>
           <div>
             <h3>
               В избранном пусто
@@ -22,9 +21,8 @@ module.exports = function Favorites({ user, socks }) {
             </h5>
           </div>
         </div>
-        )}
 
-        <div className="d-flex flex-wrap justify-content-center">
+        <div data-all-card-container className="d-flex flex-wrap justify-content-center">
 
           {socks.map((sock) => (
             <div data-card data-id-type={sock.uuid ? 'uuid' : 'id'} data-uuid={sock.uuid} data-id={sock.id} className="card body-cart">

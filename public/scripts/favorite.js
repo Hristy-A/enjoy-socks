@@ -1,3 +1,6 @@
+const cardsContainer = document.querySelector('[data-all-card-container]');
+const emptyMessage = document.querySelector('[data-empty-message]');
+
 document.querySelector('main').addEventListener('click', async (event) => {
   const { target } = event;
   let aim = target.closest('[data-delete-btn]');
@@ -20,6 +23,10 @@ document.querySelector('main').addEventListener('click', async (event) => {
       target.closest('[data-card]')?.remove();
     }
   }
+
+  if (cardsContainer.children.length === 0) {
+    emptyMessage.className = 'd-flex flex-column justify-content-center align-items-center';
+  }
 });
 document.querySelector('main').addEventListener('click', async (event) => {
   const { target } = event;
@@ -30,4 +37,8 @@ document.querySelector('main').addEventListener('click', async (event) => {
   else await fetch(`/api/favorites/${aim.dataset.id}`, { method: 'DELETE' });
 
   target.closest('[data-card]')?.remove();
+
+  if (cardsContainer.children.length === 0) {
+    emptyMessage.className = 'd-flex flex-column justify-content-center align-items-center';
+  }
 });
