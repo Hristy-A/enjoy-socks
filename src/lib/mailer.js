@@ -11,32 +11,24 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-exports.sendMail = function sendMail(to, text, html) {
+exports.sendMail = function sendMail(to, html) {
   const mail = {
     from: 'Enjoy Socks <enjoysocks@mail.ru>',
     to: `${to}, ${to}`,
     subject: 'Благодарим за покупку!',
-    text,
+    html,
   };
-
-  if (html) {
-    mail.html = html;
-  }
 
   return transporter.sendMail(mail);
 };
 
-exports.notifyOwner = function notifyOwner(text, html) {
+exports.notifyOwner = function notifyOwner(html) {
   const mail = {
     from: 'Enjoy Socks <enjoysocks@mail.ru>',
     to: `${process.env.OWNER_EMAIL}, ${process.env.OWNER_EMAIL}`,
     subject: 'Оформлен новый заказ',
-    text,
+    html,
   };
-
-  if (html) {
-    mail.html = html;
-  }
 
   return transporter.sendMail(mail);
 };

@@ -14,17 +14,15 @@ module.exports = function carts(cartsRoute) {
 
       await sendMail(
         email,
-        'Заказ успешно оформлен! С Вами свяжутся в ближайшее время по деталям оформления.',
-        '<h3>Заказ успешно оформлен! С Вами свяжутся в ближайшее время по деталям оформления.</h3>',
+        '<h2>Заказ успешно оформлен!</h2><h3>С Вами свяжутся в ближайшее время по деталям оформления.</h3>',
       );
-      const message = `Детали заказа:\n  Заказчик: ${name} | ${email} | ${phone}\n  Заказаны носки: ${socks.map((sock) => {
-        const msg = `    Цвет: ${sock.color.id} Узор: ${sock.pattern?.id ?? 'none'} Рисунок: ${sock.image?.id ?? 'none'}`;
+      const message = `<h2>Детали заказа:</h2><div>Заказчик: имя - ${name} | почта - ${email} | телефон - ${phone}\n</div><div>Заказаны носки:</div><table border="2" style="border-collapse: collapse;font-family: sans-serif;"><thead><tr align="center"><th>Номер</th><th>Цвет</th><th>Узор</th><th>Рисунок</th></tr></thead><tbody>${socks.map((sock, i) => {
+        const msg = `<tr align="center"><td>${i + 1}</td><td>${sock.color.link.match(/(\w+).png$/)[1]}</td><td>${sock.pattern?.link?.match(/(\w+).png$/)?.[1] ?? '---'}</td><td>${sock.image?.link?.match(/(\w+).png$/)?.[1] ?? '---'}</td></tr>`;
         return msg;
-      }).join('\n')}`;
+      }).join('')}</tbody></table>`;
 
       console.log(message);
       await notifyOwner(
-        'Test',
         message,
       );
 
