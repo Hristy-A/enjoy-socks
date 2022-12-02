@@ -40,7 +40,7 @@ formAuth.addEventListener('submit', async (event) => {
     } else if (responseData.duplicate) {
       error = 'Пользователь уже существует';
     } else if (responseData.validation) {
-      error = 'Введите данные в указанном формате';
+      error = 'Введите почту в формате example@example.ru';
     } else {
       error = 'Что-то пошло не так...';
       console.log(error);
