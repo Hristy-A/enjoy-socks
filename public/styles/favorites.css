@@ -1,14 +1,11 @@
 .card {
   width: 250px;
   margin: 15px 15px 15px 15px;
-  /* border-radius: 20px; */
 }
 
 .cst-favorits-box {
-    /* margin-top: 15px; */
     width: 246px;
     height: 298px;
-    /* border: 1px solid gray; */
     border-radius: 2px;
     position: relative;
     z-index: 1;
@@ -25,7 +22,6 @@
   .body-cart {
     background-color: whitesmoke;
     border: 1px solid gray;
-    /* box-shadow: 7px 7px 15px rgb(102, 102, 102); */
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -66,7 +62,6 @@
     transform: translate(-50%, -50%);
   }
 
-
   .buy {
     width: 500px;
     height: 150px;
@@ -83,18 +78,3 @@
     margin-left: 200px;
     padding: 0px;
   }
-
-  .cst-favorites-length {
-    position: absolute;
-    top: 5px;
-    left: 77%;
-    width: 25px;
-    height: 25px;
-    border: 1px solid red;
-    border-radius: 50%;
-    line-height: 22px; 
-    text-align: center;
-    background: red;
-    color: white;
-    font-size: 15px;
-    }

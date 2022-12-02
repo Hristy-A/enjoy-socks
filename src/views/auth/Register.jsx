@@ -5,7 +5,7 @@ module.exports = function Register() {
   return (
     <Layout styles="./styles/auth.css">
 
-      <div className="d-flex justify-content-center">
+      <div>
 
         <form id="auth" action="/register" method="POST">
           <div className="login-box">
@@ -14,12 +14,12 @@ module.exports = function Register() {
 
             <div className="input-group mb-3 input-wigth">
               <span className="input-group-text" id="basic-addon1">👤</span>
-              <input type="text" name="name" id="name" required pattern="\w{4,}" className="form-control" placeholder="Имя пользователя" aria-describedby="basic-addon1" />
+              <input type="text" name="name" id="name" required className="form-control" placeholder="Имя пользователя" aria-describedby="basic-addon1" />
             </div>
 
             <div className="input-group mb-3 input-wigth">
               <span className="input-group-text" id="basic-addon1">📩</span>
-              <input type="text" name="email" id="email" required pattern=".{4,}" className="form-control" placeholder="Электронная почта" aria-describedby="basic-addon1" />
+              <input type="text" name="email" id="email" required className="form-control" placeholder="Электронная почта" aria-describedby="basic-addon1" />
             </div>
 
             <div className="input-group mb-3 input-wigth">
@@ -29,15 +29,16 @@ module.exports = function Register() {
 
             <div className="input-group mb-3 input-wigth">
               <span className="input-group-text" id="basic-addon1">🔑</span>
-              <input type="password" name="password" id="password" required pattern="\w{4,}" className="form-control" placeholder="Пароль" aria-describedby="basic-addon1" />
+              <input type="password" name="password" id="password" required className="form-control" placeholder="Пароль" aria-describedby="basic-addon1" />
             </div>
 
             <div className="d-flex justify-content-center">
               <div className="d-flex justify-content-center cst-btn-log-reg">
                 <button className="button-off" type="submit">
                   <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" className="bi bi-save-fill" viewBox="0 0 16 16">
-                      <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293V1.5z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" className="bi bi-person-add" viewBox="0 0 16 16">
+                      <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                      <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
                     </svg>
                   </div>
                 </button>

@@ -7,6 +7,14 @@
   cursor: pointer;
 }
 
+.cst-btn-log-reg {
+  margin-top: 20px;
+}
 .cst-btn-log-reg:hover {
   transform: scale(1.2);
+}
+
+.error-box {
+  color: red;
+  margin-bottom: 10px;
 }
