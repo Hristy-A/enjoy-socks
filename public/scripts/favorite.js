@@ -21,6 +21,26 @@ document.querySelector('main').addEventListener('click', async (event) => {
       }
 
       target.closest('[data-card]')?.remove();
+    } else {
+      aim = target.closest('[data-move-share]');
+
+      if (aim !== null) {
+        const card = aim.closest('[data-card]');
+        console.log('card: ', card);
+        let shareLink = `${document.location.protocol}//${document.location.hostname}:${document.location.port}/?`;
+        const color = card.querySelector('.cst-color');
+        shareLink += `color=${color.dataset.id}`;
+
+        const pattern = card.querySelector('.cst-pattern');
+        const image = card.querySelector('.cst-image');
+
+        console.log(pattern, image);
+
+        if (pattern) shareLink += `&pattern=${pattern.dataset.id}`;
+        if (image) shareLink += `&image=${image.dataset.id}`;
+
+        navigator.clipboard.writeText(shareLink);
+      }
     }
   }
 

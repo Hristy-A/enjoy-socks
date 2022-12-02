@@ -27,6 +27,11 @@ function addFavorite(sock) {
 function hasFavorites() {
   return JSON.parse(localStorage.getItem('favorites')) !== null;
 }
+function getFavorite(uuid) {
+  const favorites = JSON.parse(localStorage.getItem('favorites'));
+  if (!favorites) return;
+  return favorites.find((sock) => sock.uuid === uuid);
+}
 function removeFavorite(uuid) {
   const favorites = JSON.parse(localStorage.getItem('favorites'));
   if (!favorites) return;

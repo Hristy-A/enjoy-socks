@@ -31,12 +31,12 @@ module.exports = function Favorites({ user, socks }) {
                   <div className="cst-favorits-box">
 
                     {sock.image !== null && (
-                    <img className="cst-sock cst-image favorits" src={sock.image?.link ?? ''} alt="" />
+                    <img data-id={sock.image?.id ?? ''} className="cst-sock cst-image favorits" src={sock.image?.link ?? ''} alt="" />
                     )}
                     {sock.pattern !== null && (
-                    <img className="cst-sock cst-pattern favorits" src={sock.pattern?.link ?? ''} alt="" />
+                    <img data-id={sock.pattern?.id ?? ''} className="cst-sock cst-pattern favorits" src={sock.pattern?.link ?? ''} alt="" />
                     )}
-                    <img className="cst-sock cst-color favorits" src={sock.color.link} alt="" />
+                    <img data-id={sock.color?.id ?? '1'} className="cst-sock cst-color favorits" src={sock.color.link} alt="" />
 
                   </div>
                 </div>
@@ -64,7 +64,7 @@ module.exports = function Favorites({ user, socks }) {
                     </div>
                   </div>
                 </div>
-                <div className="card-body d-flex justify-content-center">
+                <div data-move-share className="card-body d-flex justify-content-center">
                   <div className="nav-item text-center">
                     <div>
                       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-share-fill" viewBox="0 0 20 20">
