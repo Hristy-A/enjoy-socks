@@ -129,6 +129,18 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
 
+    static async formOrder(user, { name, email, phone }) {
+      if (!name || !email || !phone) {
+        const validationError = new ValidationErrorItem();
+        validationError.name = 'SequelizeValidationError';
+        throw validationError;
+      }
+      const purchaser = await User.getCarts(user.id);
+      if (purchaser === null) return [];
+      console.log(purchaser.purchases);
+      return purchaser.purchases;
+    }
+
     static associate(models) {
       Object.assign(this, models);
       this.favorites = User.belongsToMany(models.Sock, {
