@@ -9,7 +9,11 @@ module.exports = (sequelize, DataTypes) => {
     static async register({
       name, email, phone, password,
     }) {
-      if (!name || !email || !phone || !password) throw new ValidationErrorItem();
+      if (!name || !email || !phone || !password) {
+        const validationError = new ValidationErrorItem();
+        validationError.name = 'SequelizeValidationError';
+        throw validationError;
+      }
 
       const passhash = await bcrypt.hash(password, 10);
 
