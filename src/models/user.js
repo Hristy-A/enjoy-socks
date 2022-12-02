@@ -137,7 +137,7 @@ module.exports = (sequelize, DataTypes) => {
       }
       const purchaser = await User.getCarts(user.id);
       if (purchaser === null) return [];
-      console.log(purchaser.purchases);
+      User.Cart.destroy({ where: { userId: user.id } });
       return purchaser.purchases;
     }
 

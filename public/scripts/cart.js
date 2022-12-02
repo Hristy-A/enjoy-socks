@@ -35,6 +35,9 @@ formOrderBtn.addEventListener('click', async (event) => {
   }
   if (response.ok) {
     closeModalBtn.click();
+    socksCartContainer.innerHTML = '';
+    makeCellBtns.className = 'd-none';
+    emptyCartMsg.className = 'd-flex flex-column justify-content-center align-items-center';
   }
 });
 
