@@ -27,7 +27,7 @@ document.querySelector('main').addEventListener('click', async (event) => {
       if (aim !== null) {
         const card = aim.closest('[data-card]');
         console.log('card: ', card);
-        let shareLink = `${document.location.protocol}//${document.location.hostname}:${document.location.port}/?`;
+        let shareLink = `${document.location.protocol}//${document.location.hostname}:${document.location.port}/share/?`;
         const color = card.querySelector('.cst-color');
         shareLink += `color=${color.dataset.id}`;
 

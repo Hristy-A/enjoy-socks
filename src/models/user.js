@@ -141,6 +141,20 @@ module.exports = (sequelize, DataTypes) => {
       return purchaser.purchases;
     }
 
+    static async getCardInfo(colorId, patternId, imageId) {
+      const color = await User.Color.findByPk(colorId ?? 1);
+      let pattern;
+      let image;
+      if (patternId) {
+        pattern = await User.Pattern.findByPk(patternId);
+      }
+      if (imageId) {
+        image = await User.Image.findByPk(imageId);
+      }
+
+      return { color, pattern, image };
+    }
+
     static associate(models) {
       Object.assign(this, models);
       this.favorites = User.belongsToMany(models.Sock, {
