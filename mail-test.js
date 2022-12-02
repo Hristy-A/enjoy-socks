@@ -1,9 +1,6 @@
 const nodemailer = require('nodemailer');
 
 async function sendMail() {
-  // const testEmailAccount = await nodemailer.createTestAccount();
-  // console.log(testEmailAccount);
-
   const transporter = nodemailer.createTransport({
     host: 'smtp.mail.ru',
     port: 465,
@@ -14,16 +11,26 @@ async function sendMail() {
     },
   });
 
-  const result = await transporter.sendMail({
+  const sellerMail = await transporter.sendMail({
     from: 'Enjoy Socks <enjoysocks@mail.ru>',
     to: 'enjoysocks@mail.ru, enjoysocks@mail.ru',
-    subject: 'Message from Node js',
+    subject: 'Новый заказ',
     text: 'This message was sent from Node js server.',
     html:
     'This <i>message</i> was sent from <strong>Node js</strong> server.',
   });
 
-  console.log(result);
+  const byerMail = await transporter.sendMail({
+    from: 'Enjoy Socks <enjoysocks@mail.ru>',
+    to: '<почта покупателя>, <почта покупателя>',
+    subject: 'Заказ успешно оформлен',
+    text: 'This message was sent from Node js server.',
+    html:
+    'This <i>message</i> was sent from <strong>Node js</strong> server.',
+  });
+
+  console.log(sellerMail);
+  console.log(byerMail);
 }
 
 sendMail();
