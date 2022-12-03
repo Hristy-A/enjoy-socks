@@ -1,0 +1,74 @@
+.body{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cst-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cst-header {
+  flex: 0 0 100px;
+}
+
+
+.cst-main {
+  flex: 1 0 auto;
+
+}
+
+.cst-footer {
+  flex: 0 0 50px;
+  font-size: 16px;
+} 
+
+.navbar-nav {
+  font-size: 12px;
+}
+.navbar-size{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+.cst-btn {
+  margin: 5px 5px 5px 5px;
+}
+
+.nav-item:hover {
+  transform: scale(1.2);
+}
+
+.cst-logo:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  margin: 50px 10px 20px 10px;
+}
+
+.cst-navbar {
+  background-color: whitesmoke;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.cst-contact-title {
+  margin-right: 5px;
+}
+
+.cst-footer-icon {
+  margin-right: 3px;
+}
+
+.input-wigth{
+  width: 300px;
+}

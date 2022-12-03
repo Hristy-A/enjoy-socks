@@ -1,0 +1,150 @@
+.cst-color-select div {
+  width: 50px; 
+  height: 50px;
+  margin: 5px 5px 5px 5px;
+}
+
+.cst-clear, .cst-select-el {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cst-clear:hover, .cst-select-el:hover {
+  transform: scale(1.2);
+}
+
+.cst-select-el:active {
+  border: 1px;
+  border-color: black;
+  border-style: inset;
+}
+
+.cst-generator-box {
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background-color: whitesmoke;
+  margin: 20px 50px 20px 50px;
+}
+
+.cst-sock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.cst-clear {
+  width: 50px;
+  height: 50px;
+}
+
+.cst-color {
+ z-index: 1;
+}
+
+.cst-pattern {
+  z-index: 2;
+}
+
+.cst-image {
+  z-index: 3;
+}
+
+.cst-generator-btn {
+  height: 50px;
+}
+
+.cst-generator-btn-color {
+  width: 50px;
+  height: 85px;
+}
+
+.cst-btn-add {
+  margin: 20px;
+}
+
+.cst-btn-add:hover  {
+  transform: scale(1.2);
+}
+
+.cst-block-title {
+  width: 70px;
+  height: 50px;
+  display: flex;
+  justify-content:left;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.cst-select-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cst-btn-block {
+  margin-top: 3em;
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+  width: auto;
+}
+
+.cst-btn-generate {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.cst-btn-generate:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .cst-generator-box {
+    width: 400px;
+    height: 400px;
+    margin: 20px 10px 20px 10px;
+  }
+}
+
+@media (max-width: 667px) {
+
+  .cst-generator-box {
+    width: 360px;
+    height: 360px;
+    margin: 10px 30px 10px 30px;
+  }
+
+  .cst-color-select div {
+    width: 35px; 
+    height: 35px;
+    margin: 5px 5px 5px 5px;
+  }
+
+  .cst-clear {
+    width: 35px;
+    height: 35px;
+  }
+
+  .cst-generator-btn-color {
+    width: 35px;
+    height: 60px;
+  }
+
+  .cst-block-title {
+    width: 55px;
+    height: 35px;
+  }
+}
